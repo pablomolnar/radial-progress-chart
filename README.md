@@ -44,4 +44,4 @@ Sure, pull request are welcome. Just be aware to run "npm hint" before pushing i
 
 ## License
 This library is free and open source software, distributed under the MIT License.
-MIT license. Copyright © 2015 Pablo Molnar @pmolnar;
+Copyright © 2015 Pablo Molnar @pmolnar;
