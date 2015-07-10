@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background: black;
+      margin: 0 auto;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .container div {
+      display: inline-block;
+      padding: 20px;
+    }
+
+    .rbc-label-start {
+      font-family: fontawesome;
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .rbc-center-text {
+      font-family: 'Roboto', 'Myriad Set Pro', 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial;
+      fill: white;
+    }
+
+    .calories .rbc-center-text-line0 {
+      font-size: 95px;
+    }
+
+    .calories .rbc-center-text-line1 {
+      font-size: 20px;
+    }
+
+    .gpa .rbc-center-text-line0 {
+      font-size: 30px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.js"></script>
+<script src="../index.js"></script>
+
+<div class="container">
+  <div class="calories"></div>
+  <div class="gpa"></div>
+</div>
+
+<script>
+
+  var calories = new RadialProgressChart('.calories', {
+    diameter: 200,
+    max: 800,
+    round: true,
+    series: [
+      {
+        labelStart: '\uF105',
+        value: 500,
+        color: {
+          linearGradient: { x1: '0%', y1: '100%', x2: '50%', y2: '0%', spreadMethod: 'pad' },
+          stops: [
+            {offset: '0%', 'stop-color': '#fe08b5', 'stop-opacity': 1},
+            {offset: '100%', 'stop-color': '#ff1410', 'stop-opacity': 1}
+          ]}
+      }
+    ],
+    center: {
+      content: [function (value) {
+        return value
+      }, ' OF 800 CALS'],
+      y: '25px'
+    }
+  });
+
+  var gpa = new RadialProgressChart('.gpa', {
+    diameter: 200,
+    max: 4,
+    round: false,
+    series: [
+      {
+        value: 3.75,
+        color: ['red', '#7CFC00']
+      }
+    ],
+    center: function (d) {
+      return d.toFixed(2) + ' GPA'
+    }
+  });
+
+
+  function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  (function loop() {
+    calories.update(Math.round(getRandom(50, 800)));
+    gpa.update(getRandom(0.5, 3.8));
+    setTimeout(loop, 3000);
+  })();
+
+
+</script>
+
+</body>
+
+</html>

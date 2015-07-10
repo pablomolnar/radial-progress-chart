@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background: lightslategray;
+      margin: 0 auto;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .container div {
+      display: inline-block;
+      padding: 20px;
+    }
+
+    .rbc-label-start {
+      font-family: fontawesome;
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .rbc-center-text {
+      font-family: 'Roboto', 'Myriad Set Pro', 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial;
+      fill: white;
+      font-size: 45px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.js"></script>
+<script src="../index.js"></script>
+
+<div class="container">
+  <div class="progress"></div>
+</div>
+
+<script>
+
+  var progress = new RadialProgressChart('.progress', {
+    diameter: 200,
+    series: [
+      {
+        labelStart: '\uF105',
+        value: 0,
+        color: {
+          linearGradient: { x1: '0%', y1: '100%', x2: '50%', y2: '0%', spreadMethod: 'pad' },
+          stops: [
+            {offset: '0%', 'stop-color': '#ffff00', 'stop-opacity': 1},
+            {offset: '100%', 'stop-color': '#ff0000', 'stop-opacity': 1}
+          ]}
+      }
+    ],
+    center: function (p) {
+      return p + ' %'
+    }
+  });
+
+
+  function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function loop(p) {
+    if (p > 100) {
+      setTimeout(function () {
+        loop(0)
+      }, 3000)
+    } else {
+      progress.update(p);
+      setTimeout(function () {
+        loop(p + 1)
+      }, 90)
+    }
+  }
+
+  loop(10);
+
+</script>
+
+</body>
+
+</html>

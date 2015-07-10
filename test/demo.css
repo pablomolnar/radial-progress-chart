@@ -1,0 +1,20 @@
+body {
+    background: black;
+}
+
+svg {
+    padding: 25px;
+}
+
+.rbc-label-start {
+    font-family: fontawesome;
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+.rbc-center-text {
+    font-family: 'Roboto', 'Myriad Set Pro', 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+    fill: white;
+    font-size: 95px;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="demo.css">
+
+</head>
+<body>
+<script src="https://cdn.rawgit.com/bm-w/d3/master/d3.js"></script>
+<script src="../index.js"></script>
+
+<div id="simple"></div>
+<div id="complex"></div>
+
+<script>
+
+  var config = {
+    diameter: 200,
+    stroke: {
+      width: 40,
+      gap: 2
+    },
+
+    animation: {
+      duration: 1750,
+      delay: 100
+      //delay: function(index){}
+
+    },
+
+    min: 650,
+    max: 850,
+
+    series: [70, 10, 45],
+    series: [
+      {
+        //title: 'walk',
+
+        labelStart: '\uF105',
+        //labelStart: function(value, percentage){},
+
+        //labelEnd: '10m',
+        //labelEnd: function(value, percentage){},
+
+        color: {
+          linearGradient: { x1: '0%', y1: '100%', x2: '50%', y2: '0%', spreadMethod: 'pad' },
+          //radialGradient: {cx:"60" cy:"60" r:"50", fx:"0.25" fy:"0.25" spreadMethod:"pad" gradientUnits:"userSpaceOnUse"}
+          stops: [
+            {offset: '0%', 'stop-color': '#fe08b5', 'stop-opacity': 1},
+            {offset: '100%', 'stop-color': '#ff1410', 'stop-opacity': 1}
+          ]},
+//        color: {
+//          solid: '#fe08b5'
+//        },
+//        color: {
+//          interpolate: ["#ff0000", "#0000ff"]
+//        },
+        // color: '#fe08b5',
+        // color: ["#ff0000", "#0000ff"]
+        value: 800
+      }
+    ],
+
+    center: {
+      content: '300',
+      x:40,
+      y:10
+    },
+    center: {
+      content: ['500', 'of 1000 cals'],
+      x:40,
+      y:10
+    },
+    center: {
+      content: function(value){ return value + ' cals'},
+      x:40,
+      y:10
+    },
+    center: {
+      content: '<div></div>',
+      x:40,
+      y:10,
+      html: true
+    }
+
+    // center: '300' or ['500', 'of 1000 cals'] or function(value){ return value + ' cals'}
+  };
+
+
+  var simple = new RadialProgressChart('#simple', {series: [70, 10, 45]});
+
+  //simple.series[1].value = 80;
+  //simple.update();
+
+  //simple.update(0, 70)
+  //simple.update(2, 20)
+
+  //simple.update([{value: 70}, 10, 45])
+  //simple.update({series: [{value: 70}, 10, 45]})
+
+  var options = {
+    min: 650,
+    max: 850,
+    diameter: 200,
+//    center: function (value) {
+//      return "test:" + value;
+//    },
+    //center: '300',
+    //center: ['300', '100'],
+    series: [
+      {
+        title: 'walk',
+        labelStart: '\uF105',
+        //labelEnd: '10m',
+        color: {
+          linearGradient: { x1: '0%', y1: '100%', x2: '50%', y2: '0%', spreadMethod: 'pad' },
+          stops: [
+            {offset: '0%', 'stop-color': '#fe08b5', 'stop-opacity': 1},
+            {offset: '100%', 'stop-color': '#ff1410', 'stop-opacity': 1}
+          ]},
+        // color: '#fe08b5',
+        // color: new RadialProgressChart.Color.Interpolate("#ff0000", "#0000ff")
+        value: 800
+      }
+    ]
+  };
+
+  var complex = new RadialProgressChart('#complex', options);
+</script>
+
+</body>
+
+</html>
