@@ -32,5 +32,11 @@
   ],
   "author": "Pablo Molnar",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "spm": {
+    "dependencies": {
+      "d3": "^3.5.0"
+    },
+    "main": "index.js"
+  }
 }
