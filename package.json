@@ -1,6 +1,6 @@
 {
   "name": "radial-progress-chart",
-  "description": "Radial progress chart inpired by Apple Watch activity app design",
+  "description": "Radial Progress Chart started as a weekend project. It's written on the top of D3.js and was heavily inspired by and D3 stub of Polar Clock",
   "version": "0.0.1",
   "repository": "git@github.com:pablomolnar/radial-progress-chart.git",
   "scripts": {
@@ -27,7 +27,8 @@
     "bar",
     "progress",
     "chart",
-    "polar"
+    "polar",
+    "d3"
   ],
   "author": "Pablo Molnar",
   "license": "MIT",
