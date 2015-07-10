@@ -26,7 +26,7 @@ Check out project page [http://pablomolnar.github.io/radial-progress-chart](http
 
     $ bower install radial-progress-chart
 
-    $ component install radial-progress-chart
+    $ component install pablomolnar/radial-progress-chart
     
     $ spm install radial-progress-chart
 
