@@ -20,7 +20,7 @@ D3.js = ^3.5.0
 
 Check out project page [http://pablomolnar.github.io/radial-progress-chart](http://pablomolnar.github.io/radial-progress-chart)
 
-## Installation (TODO)
+## Installation
 
     $ npm install radial-progress-chart
 
@@ -34,13 +34,20 @@ Check out project page [http://pablomolnar.github.io/radial-progress-chart](http
 
 Check out project page [http://pablomolnar.github.io/radial-progress-chart](http://pablomolnar.github.io/radial-progress-chart)
 
-
 ## Browser Support
 
 - Evergreen browsers (TODO make a list)
 
 ## Contribution
-Sure, pull request are welcome. Just be aware to run "npm hint" before pushing it.
+Sure, pull request are welcome. To compile it locally follow these steps:
+
+    $ npm install
+    $ npm run-script build
+    
+Remember to test and hint your code with:
+
+    $ npm test
+    $ npm run-script hint    
 
 ## License
 This library is free and open source software, distributed under the MIT License.
