@@ -22,6 +22,8 @@ Check out project page [http://pablomolnar.github.io/radial-progress-chart](http
 
 ## Installation
 
+Download the latest version from Github or use your favorite package manager to include it in your project.
+
     $ npm install radial-progress-chart
 
     $ bower install radial-progress-chart
