@@ -1,6 +1,6 @@
 {
   "name": "radial-progress-chart",
-  "description": "Radial Progress Chart started as a weekend project. It's written on the top of D3.js and was heavily inspired by and D3 stub of Polar Clock",
+  "description": "A customizable Radial Progress Chart written on the top of D3.js.",
   "version": "0.0.1",
   "repository": "git@github.com:pablomolnar/radial-progress-chart.git",
   "scripts": {
