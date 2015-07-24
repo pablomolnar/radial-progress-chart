@@ -4,13 +4,14 @@
 
 ## Features
 
-I tried to make it highly customizable for serve multiple purpose. Some of the features are:
+I tried to make it highly customizable for serve multiple purposes. Some of the features available are:
 
 - Add many progress rings as you want
 - Place static or dynamic text in the center
 - Customize diameter, stroke width, gap, colors
 - CSS customizable
 - Chart data can be update
+- 275 bytes minified & gzipped
 
 ## Dependencies
 
@@ -32,16 +33,19 @@ Download the latest version from Github or use your favorite package manager to 
     
     $ spm install radial-progress-chart
 
+Check out project page [http://pablomolnar.github.io/radial-progress-chart](http://pablomolnar.github.io/radial-progress-chart)
+
 ## API & Usage
 
 Check out project page [http://pablomolnar.github.io/radial-progress-chart](http://pablomolnar.github.io/radial-progress-chart)
 
 ## Browser Support
 
-- Evergreen browsers (TODO make a list)
+- Modern browsers (Chrome, Firefox, Safari, Opera, iOS, Android)
+- IE9+
 
 ## Contribution
-Sure, pull request are welcome. To compile it locally follow these steps:
+Sure, pull request are welcome. Build the project locally using the following steps:
 
     $ npm install
     $ npm run-script build
