@@ -1,1 +1,377 @@
-My Page
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A customizable Radial Progress Chart written on the top of D3.js">
+    <meta name="author" content="Pablo Molnar">
+
+    <title>Radial Progress Chart</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Code highlighting -->
+    <link href="css/prism.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <div class="logo">
+                        <img src="img/logo.svg" height="25px" width="25px">
+                        <span class="light middle">Radial Progress Chart</span> 
+                    </div>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#gettingStarted">Getting Started</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#documentation">Documentation</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#examples">Examples</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="intro-chart"></div>
+                        <p class="intro-text">A customizable Radial Progress Chart.</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="text-center">About</h2>
+                <p>Radial Progress Chart started as a weekend project. It's written on the top of <a href="http://d3js.org/">D3.js</a> and was heavily inspired by <a href="https://www.apple.com/watch/health-and-fitness/">Apple Watch Activity</a> and D3 stub of <a href="http://bl.ocks.org/mbostock/1096355">Polar Clock</a>.</p>
+                <p>I tried to make it highly customizable for serve multiple purposes. Some of the features available are:</p>
+                <ul class="features">
+                  <li>Add many progress rings as you want</li>
+                  <li>Place static or dynamic text in the center</li>
+                  <li>Customize diameter, stroke width, gap, colors</li>
+                  <li>CSS customizable</li>
+                  <li>Chart data can be update</li>
+                  <li>275 bytes minified &amp; gzipped</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="gettingStarted" class="content-section">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="text-center">Getting Started</h2>
+                    <p>Download the latest version from <a href="https://github.com/pablomolnar/radial-progress-chart/releases/latest">Github</a> or use your favorite package manager to include it in your project.</p>
+<p><pre><code class="language-text">npm install radial-progress-chart
+bower install radial-progress-chart
+component install radial-progress-chart
+spm install radial-progress-chart
+</code></pre><p>
+
+                    <p>Don't forget to load D3.js dependecy before in your HTML. Then use the <code class="language-javascript">RadialProgressChart</code> object to instance charts in this way:</p>
+<p><pre><code class="language-javascript">
+new RadialProgressChart('.container', {series: [24, 85]});
+</code></pre><p>
+                    <p>There you go! Make sure to check out the API and examples to know the different ways to customize and use the chart.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="documentation" class="container content-section">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="text-center">Documentation</h2>
+                <h4>Dependencies</h4>
+                <ul>
+                  <li>D3.js = ^3.5.0</li>
+                </ul>
+                
+
+                <h4>Browser Support</h4>
+                <ul>
+                  <li>Modern browsers (Chrome, Firefox, Safari, Opera, iOS, Android)</li>
+                  <li>IE9+</li>
+                </ul>
+
+                <h4>API</h4>
+                Use constructor to create your charts:
+
+                <p><pre><code class="language-javascript">
+var myChart = new RadialProgressChart(bindTo, settings);
+</code></pre></p>
+
+                Where:
+                <br><br>
+                <code class="field language-javascript" >bindTo</code>: dom element, d3 element or query selector (required)
+                <br>
+                <code class="field language-javascript" >settings</code>: object (required). Format:
+                <br><br>
+                <pre><code class="language-javascript">
+{
+    diameter: int (internal diamenter, default: 100),
+    stroke: {
+        width: int (default: 40),
+        gap: int (default: 2)
+    },
+    animation: {
+        duration: int (default: 1750),
+        delay: int (between each ring, default: 200)
+    },
+    min: int (default: 0),
+    max: int (default: 100),
+    round: boolean (default: true),
+    
+    // array of numbers
+    series: [10, 15, 5],
+    
+    // or array of objects
+    series: [
+        {
+            value: int (required)
+
+            // color object (optional)
+            color: {
+                solid: '#fe08b5',
+                background: 'red'
+            }
+
+            // or interpolate between two colors
+            color: {
+                interpolate: ['#000000', '#ff0000'],
+                background: 'red'
+            }
+
+            // or use a gradient object (check out svg gradient specs)
+            color: {
+                radialGradient: {cx: '60', cy: '60', r: '50'},
+                stops: [
+                  {offset: '0%', 'stop-color': '#fe08b5', 'stop-opacity': 1},
+                  {offset: '100%', 'stop-color': '#ff1410', 'stop-opacity': 1}
+                ]
+            }
+
+            // if specifying a background is not necessary you can use these shortcuts
+            color: '#fe08b5'
+            color: ['#000000', '#ff0000']
+        }
+    ],
+    
+
+    // simple center text
+    center: string (default: "")
+
+    // or function which returns a string
+    center: function(value, index, item){}
+
+    // Need multilines? Use an array of mixed strings/functions, each element is a new line
+    center: ['foo bar', function(value, index, item){ ... }, ...]
+
+    // if positioning is needed use this format
+    center: {
+        content: string/function/array,
+        y: int (default: 0),
+        x: int (default: 0)
+    }
+}
+</code></pre>
+
+                <br><br>
+                Once chart is created you can use <code class="language-javascript">update()</code> function to update values:
+
+                <p><pre><code class="language-javascript">
+// one ring shortcut
+myChart.update(75);
+
+// multiple rings
+myChart.update([35, 45]);
+myChart.update([{value: 35}, {value: 45}]);
+myChart.update({series:[{value: 35}, {value: 45}]);
+</code></pre></p>
+
+                <br>
+                <h4>Contribution</h4>
+                Sure, pull request are welcome. Build the project locally using the following steps:
+<pre><code class="language-text">npm install
+npm run-script build
+</code></pre>
+<br>
+                Remember to test and hint your code with:
+<pre><code class="language-text">npm test
+npm run-script hint           
+</code></pre>
+
+                <h4>TODOs</h4>
+                <ul>
+                  <li>Tooltips</li>
+                  <li>Events</li>
+                  <li>Customize diameter, stroke width, gap, colors</li>
+                  <li>Labels</li>
+                  <li>Add more css classes</li>
+                  <li>More animations</li>
+                  <li>...</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="examples" class="container content-section">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="text-center">Examples</h2>
+
+                <div>
+
+                <h4>1. Week Activity</h4>
+                <p data-height="641" data-theme-id="17108" data-slug-hash="RPYjBM" data-default-tab="result" data-user="pablomolnar" class='codepen'>Javascript disabled? See the Pen <a href='http://codepen.io/pablomolnar/pen/RPYjBM/'>Radial Progress Chart - Week Activity</a> on <a href='http://codepen.io'>CodePen</a>.</p>
+                <br><br><br>
+                
+                <h4>2. Calories and GPA</h4>
+                <p data-height="384" data-theme-id="17108" data-slug-hash="VLGrVy" data-default-tab="result" data-user="pablomolnar" class='codepen'>Javascript disabled? See the Pen <a href='http://codepen.io/pablomolnar/pen/VLGrVy/'>Radial Progress Chart - Calories and GPA</a> on <a href='http://codepen.io'>CodePen</a>.</p>
+                <br><br><br>
+
+                <h4>3. Progress</h4>
+                <p data-height="379" data-theme-id="17108" data-slug-hash="zGJPyo" data-default-tab="result" data-user="pablomolnar" class='codepen'>Javascript disabled? See the Pen <a href='http://codepen.io/pablomolnar/pen/zGJPyo/'>Radial Progress Chart - Progress</a> on <a href='http://codepen.io'>CodePen</a>.</p>
+
+                <br><br><br>
+                <h4>License</h4>
+                This library is free and open source software, distributed under the MIT License.
+                <br>
+                Copyright © 2015 Pablo Molnar;
+                <br>
+                <br>
+                Theme based on <a href="https://github.com/IronSummitMedia/startbootstrap-grayscale">Start Bootstrap - Grayscale</a>
+
+            </div>
+        </div>
+    </section>
+
+        
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/pablomolnar" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/pablomolnar/radial-progress-chart" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                </ul>
+        </div>
+    </footer>
+    
+    <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Syntax Highlighting JavaScript -->
+    <script src="js/prism.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+    <!-- D3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.js"></script>
+
+    <!-- Radial Progress Chart Library JavaScript -->
+    <script src="https://rawgit.com/pablomolnar/radial-progress-chart/master/dist/radial-progress-chart.js"></script>
+
+    <!-- Create intro chart -->
+    <style>
+        .rbc-label-start {
+            font-family: fontawesome;
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+    <script>
+    var introChart = new RadialProgressChart('.intro-chart', {
+        series: [
+            {labelStart: '\uF106', value: 50},
+            {labelStart: '\uF101', value: 50},
+            {labelStart: '\uF105', value: 50}
+        ]
+    });
+
+    function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    (function loop() {
+        introChart.update([getRandom(10, 80), getRandom(10, 90), getRandom(10, 100)]);
+        setTimeout(loop, 5000);
+    })();
+        
+    </script>
+
+</body>
+
+</html>
