@@ -56,10 +56,11 @@ Remember to test and hint your code with:
     $ npm run-script hint    
 
 ##Publishing
-Bump version
-Tag vX.X.X
-npm version patch
-spm publish
+
+- Bump version
+- Tag vX.X.X
+- npm version patch
+- spm publish
 
 ## License
 This library is free and open source software, distributed under the MIT License.
