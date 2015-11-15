@@ -78,18 +78,21 @@ function RadialProgressChart(query, options) {
 
   // add shadows defs
   defs = self.svg.append("svg:defs");
+  var dropshadowId = "dropshadow-" + Math.random();
+  var filter = defs.append("filter").attr("id", dropshadowId);
+  if(self.options.shadow.width > 0) {
+    
+    filter.append("feGaussianBlur")
+      .attr("in", "SourceAlpha")
+      .attr("stdDeviation", self.options.shadow.width)
+      .attr("result", "blur");
 
-  var filter = defs.append("filter").attr("id", "dropshadow");
-  filter.append("feGaussianBlur")
-    .attr("in", "SourceAlpha")
-    .attr("stdDeviation", 4)
-    .attr("result", "blur");
-
-  filter.append("feOffset")
-    .attr("in", "blur")
-    .attr("dx", 1)
-    .attr("dy", 1)
-    .attr("result", "offsetBlur");
+    filter.append("feOffset")
+      .attr("in", "blur")
+      .attr("dx", 1)
+      .attr("dy", 1)
+      .attr("result", "offsetBlur");
+  }
 
   var feMerge = filter.append("feMerge");
   feMerge.append("feMergeNode").attr("in", "offsetBlur");
@@ -140,7 +143,7 @@ function RadialProgressChart(query, options) {
     .data(series)
     .enter().append("g");
 
-  self.field.append("path").attr("class", "progress").attr("filter", "url(#dropshadow)");
+  self.field.append("path").attr("class", "progress").attr("filter", "url(#" + dropshadowId +")");
 
   self.field.append("path").attr("class", "bg")
     .style("fill", function (item) {
@@ -288,6 +291,9 @@ RadialProgressChart.normalizeOptions = function (options) {
     stroke: {
       width: options.stroke && options.stroke.width || 40,
       gap: options.stroke && options.stroke.gap || 2
+    },
+    shadow: {
+      width: (!options.shadow || options.shadow.width === null) ? 4 : options.shadow.width
     },
     animation: {
       duration: options.animation && options.animation.duration || 1750,
