@@ -16,6 +16,7 @@ function RadialProgressChart(query, options) {
   var series = self.options.series
     , width = 15 + ((self.options.diameter / 2) + (self.options.stroke.width * self.options.series.length) + (self.options.stroke.gap * self.options.series.length - 1)) * 2
     , height = width
+    , dim = "0 0 " + height + " " + width
     , τ = 2 * Math.PI
     , inner = []
     , outer = [];
@@ -62,8 +63,8 @@ function RadialProgressChart(query, options) {
 
   // create svg
   self.svg = d3.select(query).append("svg")
-    .attr("width", width)
-    .attr("height", height)
+    .attr("preserveAspectRatio","xMinYMin meet")
+    .attr("viewBox", dim)
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
