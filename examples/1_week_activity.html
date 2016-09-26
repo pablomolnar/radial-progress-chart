@@ -9,6 +9,11 @@
       font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
     }
 
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
     li {
       display: inline-block;
       margin: 2px 10px;
@@ -27,16 +32,18 @@
       margin: 0 auto;
     }
 
-    .container  svg {
-      width: 20vw;
+    .main  svg {
+      width: 65vw;
+      max-width: 500px;
     }
 
     .week {
       text-align: center;
     }
 
-    ul.week li svg{
+    ul.week li svg {
       width: 8vw;
+      max-width: 80px;
     }
 
     .date {
@@ -87,6 +94,7 @@
   <ul class="week"></ul>
   <hr>
   <div class="date"></div>
+  <div class="main"></div>
 </div>
 
 <script>
@@ -100,7 +108,7 @@
     {day: 'S'}
   ];
   var dateFormatter = d3.time.format("%A, %B %d, %Y");
-  var mainChart = new RadialProgressChart('.container', {
+  var mainChart = new RadialProgressChart('.main', {
         diameter: 130,
         series: [
           {labelStart: '\uF106', value: 50},

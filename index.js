@@ -16,7 +16,7 @@ function RadialProgressChart(query, options) {
   var series = self.options.series
     , width = 15 + ((self.options.diameter / 2) + (self.options.stroke.width * self.options.series.length) + (self.options.stroke.gap * self.options.series.length - 1)) * 2
     , height = width
-    , dim = "0 0 "+height+" "+width+""
+    , dim = "0 0 " + height + " " + width
     , τ = 2 * Math.PI
     , inner = []
     , outer = [];
