@@ -40,6 +40,25 @@ describe('RadialProgressChart', function () {
         assert(options.series.length == 0);
       });
 
+      it('should allow falsy defaults', function () {
+        var input = {
+          stroke: {
+            gap: 0
+          }
+        };
+
+        var options = RadialProgressChart.normalizeOptions(input);
+
+        assert(options.diameter == 100);
+        assert(options.stroke.width == 40);
+        assert(options.stroke.gap == 0);
+        assert(options.animation.duration == 1750);
+        assert(options.animation.delay == 200);
+        assert(options.min == 0);
+        assert(options.max == 100);
+        assert(options.series.length == 0);
+      });
+
     });
 
     describe('Series', function () {

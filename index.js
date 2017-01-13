@@ -291,7 +291,7 @@ RadialProgressChart.normalizeOptions = function (options) {
     diameter: options.diameter || 100,
     stroke: {
       width: options.stroke && options.stroke.width || 40,
-      gap: options.stroke && options.stroke.gap || 2
+      gap: (!options.stroke || options.stroke.gap === undefined) ? 2 : options.stroke.gap
     },
     shadow: {
       width: (!options.shadow || options.shadow.width === null) ? 4 : options.shadow.width
