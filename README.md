@@ -1,4 +1,7 @@
-# Radial Progress Chart
+**Note: Sorry, I've been super busy learning and doing other stuff.This was done in 2015 so you can imagine that the code got  a little bit outdated by now...*
+
+
+# Radial Progress Chart 
 
 > Radial Progress Chart started as a weekend project. It’s written on the top of D3.js and was heavily inspired by <a href="https://www.apple.com/watch/health-and-fitness/">Apple Watch Activity</a> and D3 stub of <a href="http://bl.ocks.org/mbostock/1096355">Polar Clock
 
